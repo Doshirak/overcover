@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^/(overcover/web)
+#RewriteCond %{REQUEST_URI} !^/(web)
+RewriteRule (.*) /overcover/web/$1
+#RewriteRule (.*) /web/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /overcover/web/index.php
+#RewriteRule . /web/index.php
